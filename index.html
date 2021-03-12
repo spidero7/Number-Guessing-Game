@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>Number Guessing Game</title> 
+  
+    <style> 
+        html { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    } 
+      
+        body { 
+    width: 50%; 
+    max-width: 700px; 
+    min-width: 480px; 
+    margin: 0 auto; 
+    } 
+    </style> 
+</head> 
+  
+<body> 
+<h1>Number Guessing Game</h1>
+<h3>Guess The Number</h3>
+  
+<p>We have selected a random number between 1 - 10.  
+Try to guess it.</p> 
+  
+<div class="form"> 
+    <label for="guessWindow">Enter a guess: </label> 
+    <input type = "text" id = "guessWindow" class = "guessWindow"> 
+    <input type = "submit" value = "Submit guess" 
+           class = "guessSubmit" id = "guessClick"> 
+</div> 
+  
+<script type = "text/javascript"> 
+  
+    // generate random value 
+    let z = Math.floor(Math.random() * 10 + 1); 
+      
+    // counting the number of guesses 
+    // correct Guess 
+    let guess = 1; 
+      
+    document.getElementById("guessClick").onclick = function(){ 
+      
+   // user guess the number      
+   let x = document.getElementById("guessWindow").value; 
+  
+   if(x == z) 
+   {     
+       alert("Congrats! You guess it right in "
+               + guess + " times "); 
+   } 
+   else if(x > z) /* guessed number greater than actual number*/ 
+   {     
+       guess++; 
+       alert("sorry, try a smaller number"); 
+   } 
+   else
+   { 
+       guess++; 
+       alert("sorry, try a greater number") 
+   } 
+} 
+</script> 
+</body> 
+</html>                     
